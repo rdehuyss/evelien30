@@ -48,7 +48,13 @@
             } 
 
             div.wrapper div {
-                max-width: 60%;
+                width: 100%;
+                padding: 0 3em;
+                box-sizing: border-box;
+            }  
+
+            div.wrapper div.ballon-container {
+                width: 50%;
             }  
 
             h1{
@@ -58,9 +64,13 @@
         }
 
         @media only screen and (max-width: 600px) {
-            div.wrapper div{
-                max-width: 90%;
+            div.wrapper div {
+                padding: 0 0.5em;
             }
+
+            div.wrapper div.ballon-container {
+                width: 100%;
+            }  
         }
     </style>
 
