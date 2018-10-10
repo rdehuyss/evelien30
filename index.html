@@ -41,6 +41,27 @@
             transform: translate(-50%, -50%);
         }
 
+        .subtitle {
+            position: absolute;
+            top: 35%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            font-size: 1em;
+        }
+
+        @media only screen and (max-width: 1530px) {
+            .title {
+                top: 15%;
+                font-size: 1.8em;
+                line-height: 1.1;
+            }
+
+            .subtitle {
+                top: 35%;
+                font-size: 1em;
+            }
+        }
+
         @media only screen and (max-width: 1240px) {
             div.wrapper {
                 flex-direction: column;
@@ -63,6 +84,25 @@
             } 
         }
 
+        @media only screen and (max-width: 1100px) {
+            div.wrapper div.ballon-container {
+                width: 60%;
+            }  
+        }
+        
+
+        @media only screen and (max-width: 900px) {
+            div.wrapper div.ballon-container {
+                width: 70%;
+            }  
+        }
+        
+        @media only screen and (max-width: 800px) {
+            div.wrapper div.ballon-container {
+                width: 85%;
+            }  
+        }
+
         @media only screen and (max-width: 600px) {
             div.wrapper div {
                 padding: 0 0.5em;
@@ -81,10 +121,11 @@
         <div class="ballon-container">
             <img src="ballon.png" width="100%" />
             <h1 class="title">Evelien wordt 30!</h1>
+            <h2 class="subtitle">Sssht, ze weet van niets!</h2>
         </div>
         <div>
             <h1>Wat?</h1>
-            <p>Een verrassingsfeestje voor Evelien haar 30ste verjaardag! Ssssht, ze weet van niets...</p>
+            <p>Een verrassingsfeestje voor Evelien haar 30ste verjaardag!</p>
             <ul>
                 <li>Voor de kinderen is er een springkasteel, speelruimte en een rustige hoek</li>
                 <li>Voor de grote mensen start er in de vroege avond een fuifje</li>
@@ -100,7 +141,7 @@
         <div>
             <h1>Hoe bevestigen?</h1>
             <p>Een mailtje naar <a id="ikkommaillink">ikkom@ evelienwordt30.be</a> met hoeveel personen (kinderen en
-                volwassen) je komt.</p>
+                volwassen) je komt. <br />Wil je helpen versieren? Graag! Laat iets weten op <a id="ikwilhelpenlink">ikwilhelpen@ evelienwordt30.be</a></p>
             <h1>Cadeau tip?</h1>
             <p>Evelien is zot van:</p>
             <ul>
@@ -110,7 +151,7 @@
             </ul>
             <h1>Ik wil blijven slapen!</h1>
             <p>Voor wie van ver komt en graag wilt blijven slapen, proberen we een oplossing te zoeken. Stuur hiervoor
-                een mailtje naar <a id="ikblijslapenlink">ikwilblijvenslapen@ evelienwordt30.be</a></p>
+                een mailtje naar <a id="ikblijfslapenlink">ikwilblijvenslapen@ evelienwordt30.be</a></p>
         </div>
     </div>
 
@@ -148,9 +189,13 @@
         var mailToIkKomLink = "mailto:ikkom@evelienwordt30.be?subject=Ik kom!&body=" + encodeURIComponent(formattedIkKomBody);
         document.querySelector('#ikkommaillink').href = mailToIkKomLink;
 
-        var formattedIkBlijSlapenBody = "Hoi, \n\nIk wil graag blijven slapen na Evelien haar verjaardagsfeestje. \nIk kom met <vul mij in!> personen.\n\nGroetjes,\n<jouw naam>";
-        var mailToIkBlijSlapenLink = "mailto:ikwilblijvenslapen@evelienwordt30.be?subject=Ik wil blijven slapen!&body=" + encodeURIComponent(formattedIkBlijSlapenBody);
-        document.querySelector('#ikblijslapenlink').href = mailToIkBlijSlapenLink;
+        var formattedIkBlijfSlapenBody = "Hoi, \n\nIk wil graag blijven slapen na Evelien haar verjaardagsfeestje. \nIk kom met <vul mij in!> personen.\n\nGroetjes,\n<jouw naam>";
+        var mailToIkBlijfSlapenLink = "mailto:ikwilblijvenslapen@evelienwordt30.be?subject=Ik wil blijven slapen!&body=" + encodeURIComponent(formattedIkBlijfSlapenBody);
+        document.querySelector('#ikblijfslapenlink').href = mailToIkBlijfSlapenLink;
+
+        var formattedIkWilHelpenBody = "Hoi, \n\nIk wil graag helpen met de voorbereiding van Evelien haar verjaardagsfeestje.\n\nGroetjes,\n<jouw naam>";
+        var mailToIkWilHelpenLink = "mailto:ikwilhelpen@evelienwordt30.be?subject=Ik wil helpen!&body=" + encodeURIComponent(formattedIkWilHelpenBody);
+        document.querySelector('#ikwilhelpenlink').href = mailToIkWilHelpenLink;
     </script>
 </body>
 
