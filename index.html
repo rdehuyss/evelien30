@@ -1,1 +1,114 @@
-<h1>Evelien wordt 30!</h1>
+<html>
+    <head>
+        <title>Evelien wordt 30!</title>
+        <style>
+            @font-face {
+                font-family: HelloGoodbye;
+                src: url("hellogoodbye.otf") format("opentype");
+            }
+            body {
+                font-family: 'HelloGoodbye', serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.6em;
+                line-height: 1.6;
+            }
+            body div {
+                flex: 1 1 0;
+                padding: 0 2em;
+            }
+
+            .ballon-container {
+                position: relative;
+                text-align: center;
+            }
+            h1 {
+                font-size: 2em;
+                margin: 1.1em 0 -0.5em 0;
+            }
+            .title {
+                position: absolute;
+                top: 20%;
+                left: 45%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="ballon-container">
+            <img src="ballon.png" width="100%"/>
+            <h1 class="title">Evelien wordt 30!</h1>
+        </div>
+        <div>
+            <h1>Wat?</h1>
+            <p>Een verrassingsfeestje voor Evelien haar 30ste verjaardag! Ssssht, ze weet van niets...</p>
+            <ul>
+                <li>Voor de kinderen is er een springkasteel, speelruimte en een rustige hoek</li>
+                <li>Voor de grote mensen start er in de vroege avond een fuifje</li>
+                <li>'s avonds wordt er pizza en pasta voorzien</li>
+            </ul>
+            <h1>Wanneer?</h1>
+            <p>Zaterdag 15 december om 15u, Evelien komt wat later aan zodat we haar kunnen verrassen</p>
+            <p id="wanneer">&nbsp;</p>
+            <h1>Waar?</h1>
+            <p>Bij ons <a href="https://www.google.be/maps/place/Sint-Truidensesteenweg+70,+3300+Tienen/@50.8007872,4.9551788,17z/data=!3m1!4b1!4m5!3m4!1s0x47c16cf4fd96071f:0x18e5fb7d23f3232d!8m2!3d50.8007838!4d4.9573675">thuis</a>, Sint-Truidensesteenweg 70, 3300 Tienen</p>
+        </div>
+        <div>
+            <h1>Hoe bevestigen?</h1>
+            <p>Een mailtje naar <a id="ikkommaillink">ikkom@evelienwordt30.be</a> met hoeveel personen (kinderen en volwassen) je komt.</p>
+            <h1>Cadeau tip?</h1>
+            <p>Evelien is zot van:</p>
+            <ul>
+                <li>Een mooi, persoonlijk kaartje!</li>
+                <li>Krasbiljetten</li>
+                <li>Bij leggen voor een bakfiets kan ook</li>
+            </ul>
+            <h1>Ik wil blijven slapen!</h1>
+            <p>Voor wie van ver komt en graag wilt blijven slapen, proberen we een oplossing te zoeken. Stuur hiervoor een mailtje naar <a id="ikblijslapenlink">ikwilblijvenslapen@evelienwordt30.be</a></p>
+        </div>
+
+        
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Dec 15, 2018 15:00:00").getTime();
+            
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+            
+            // Get todays date and time
+            var now = new Date().getTime();
+            
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+            
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result in the element with id="demo"
+            document.getElementById("wanneer").innerHTML = `Nog ${days} dagen, ${hours} uur, ${minutes} minuten en ${seconds} seconden!`;
+            
+            // If the count down is finished, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("wanneer").innerHTML = "'t is gedaan!";
+            }
+            }, 1000);
+
+
+            var formattedIkKomBody = "Hoi, \n\nIk kom graag naar Evelien haar verjaardagsfeestje. \nIk kom met <vul mij in!> personen.\n\nGroetjes,\n<jouw naam>";
+            var mailToIkKomLink = "mailto:ikkom@evelienwordt30.be?subject=Ik kom!&body=" + encodeURIComponent(formattedIkKomBody);
+            document.querySelector('#ikkommaillink').href = mailToIkKomLink;
+
+            var formattedIkBlijSlapenBody = "Hoi, \n\nIk wil graag blijven slapen na Evelien haar verjaardagsfeestje. \nIk kom met <vul mij in!> personen.\n\nGroetjes,\n<jouw naam>";
+            var mailToIkBlijSlapenLink = "mailto:ikwilblijvenslapen@evelienwordt30.be?subject=Ik wil blijven slapen!&body=" + encodeURIComponent(formattedIkBlijSlapenBody);
+            document.querySelector('#ikblijslapenlink').href = mailToIkBlijSlapenLink;
+        </script>
+    </body>
+</html>
+
+
